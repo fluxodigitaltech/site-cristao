@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="Poppins, Arial, sans-serif">
+  <defs>
+    <radialGradient id="g" cx="80%" cy="12%" r="70%">
+      <stop offset="0%" stop-color="#7CEE1B" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#0B0C0A" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#7CEE1B" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0B0C0A"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+
+  <!-- logo -->
+  <g transform="translate(80,80)">
+    <rect width="66" height="66" rx="16" fill="#7CEE1B"/>
+    <path d="M28 12h10v12h12v10H38v22H28V34H16V24h12V12z" fill="#0B0C0A"/>
+    <text x="86" y="46" font-size="34" font-weight="800" fill="#FFFFFF">Cristão<tspan fill="#7CEE1B">Fit</tspan></text>
+  </g>
+
+  <text x="80" y="290" font-size="76" font-weight="800" fill="#FFFFFF">A academia da sua</text>
+  <text x="80" y="372" font-size="76" font-weight="800" fill="#7CEE1B">família.</text>
+
+  <text x="80" y="450" font-size="30" font-weight="500" fill="#FFFFFF" opacity="0.82">Ambiente cristão · Espaço Kids · Acompanhamento de perto</text>
+
+  <g transform="translate(80,510)" font-size="26" font-weight="700">
+    <rect width="330" height="58" rx="29" fill="#7CEE1B"/>
+    <text x="165" y="38" text-anchor="middle" fill="#0B0C0A">1ª aula por nossa conta</text>
+  </g>
+  <text x="1120" y="560" text-anchor="end" font-size="26" font-weight="600" fill="#FFFFFF" opacity="0.6" font-style="italic">Fé, saúde e família, no mesmo lugar</text>
+</svg>

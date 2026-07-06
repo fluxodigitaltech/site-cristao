@@ -1,89 +1,110 @@
-# 🚀 Project Template — Fluxo Digital Tech
+# Cristão Fit — Site Institucional / Landing de Conversão
 
-[![Use this template](https://img.shields.io/badge/use%20this-template-2ea44f?style=for-the-badge&logo=github)](https://github.com/fluxodigitaltech/project-template/generate)
-[![CI](https://github.com/fluxodigitaltech/project-template/actions/workflows/ci.yml/badge.svg)](https://github.com/fluxodigitaltech/project-template/actions/workflows/ci.yml)
-[![Secret Scan](https://github.com/fluxodigitaltech/project-template/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/fluxodigitaltech/project-template/actions/workflows/gitleaks.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-fe5196.svg?logo=conventionalcommits&logoColor=white)](https://www.conventionalcommits.org)
-[![Keep a Changelog](https://img.shields.io/badge/Keep%20a%20Changelog-1.1.0-orange.svg)](https://keepachangelog.com/pt-BR/1.1.0/)
-[![SemVer](https://img.shields.io/badge/SemVer-2.0.0-blue.svg)](https://semver.org/lang/pt-BR/)
+Site estático (HTML + CSS + JS, **zero dependências de build**) construído sobre o
+*Pacote Estratégico Consolidado FLU-47* da Fluxo Digital Tech. Rápido, otimizado para
+SEO local e desenhado para uma única conversão: **agendar a 1ª aula grátis no WhatsApp**.
 
-Template oficial da **Fluxo Digital Tech** para iniciar novos projetos com toda a governança, automação e segurança já configuradas.
+> **Norte da marca:** _“Cuidar do corpo é cuidar do templo — e ninguém precisa fazer isso sozinho.”_
+> Âncora de tudo: **ambiente cristão + Espaço Kids + acompanhamento próximo.**
 
 ---
 
-## 📦 Como usar
+## 📁 Estrutura
 
-1. Clique em **`Use this template`** → **`Create a new repository`**.
-2. Escolha o nome do novo repositório.
-3. Clone localmente:
-   ```bash
-   git clone https://github.com/fluxodigitaltech/<nome-do-projeto>.git
-   cd <nome-do-projeto>
-   cp .env.example .env
-   ```
-4. Edite `README.md`, `CHANGELOG.md` e `.env` com os dados do projeto.
-5. Comece a desenvolver seguindo o padrão.
+```
+site/
+├── index.html            # Página única (todas as seções + JSON-LD)
+├── robots.txt            # Libera indexação + aponta o sitemap
+├── sitemap.xml           # Sitemap (1 URL — atualizar ao criar /blog)
+├── site.webmanifest      # PWA / ícone
+└── assets/
+    ├── css/styles.css    # Design system (paleta oficial FLU-40)
+    ├── js/main.js        # WhatsApp rastreável, reveal, menu, contadores
+    └── img/
+        ├── favicon.svg   # Ícone (cruz verde-neon sobre preto)
+        ├── og-image.svg  # Fonte da imagem social
+        └── og-image.png  # 1200×630 (usada nas metatags OG/Twitter)
+```
 
----
+## 🎨 Identidade (travada no PDF — FLU-40)
 
-## 🧱 O que vem incluído
+| Cor | HEX | Uso |
+|---|---|---|
+| Verde-neon Vida | `#7CEE1B` | CTA, gráficos, dados (neon puro) |
+| Verde-texto | `#A6F55C` | Textos verdes longos/pequenos (menos vibração) |
+| Preto Propósito | `#0F110C` | Fundo dominante (levemente elevado p/ conforto visual) |
+| Cinza-escuro Estrutura | `#191C13` | Cards, painéis |
+| Branco Clareza | `#F3F5EE` | Texto principal (morno, não ofusca) |
+| Verde-vida (apoio) | `#5FD843` | Acento P3 (Método) |
+| Coral-família (apoio) | `#E0765A` | Acento P2 (Espaço Kids) |
 
-### 📄 Documentação
-- `README.md` — overview do projeto.
-- `CHANGELOG.md` — histórico de versões (Keep a Changelog + SemVer).
-- `CONTRIBUTING.md` — guia de contribuição com Conventional Commits.
-- `CODE_OF_CONDUCT.md` — Contributor Covenant 2.1.
-- `SECURITY.md` — política de divulgação responsável.
-- `LICENSE` — MIT.
+> **Passe de conforto visual:** o preto puro foi levemente elevado e o branco amornado para reduzir a vibração do neon (feedback do cliente). O verde da marca `#7CEE1B` foi preservado em CTAs/gráficos; textos verdes usam o tom suavizado `#A6F55C`.
 
-### 🤖 Automação (GitHub Actions)
-- **CI** (`.github/workflows/ci.yml`) — lint, validação de JSON e checagem de PR title.
-- **Secret Scan** (`.github/workflows/gitleaks.yml`) — gitleaks em push/PR e semanalmente.
-- **Dependabot** (`.github/dependabot.yml`) — atualizações semanais (Actions, npm, pip, Docker).
+Tipografia: **Poppins** (principal — títulos e corpo) · **Fraunces** (versículo/devocional).
 
-### 📋 Templates
-- Pull Request (`.github/PULL_REQUEST_TEMPLATE.md`).
-- Issue: bug report e feature request (`.github/ISSUE_TEMPLATE/`).
+## 🔍 SEO já implementado (FLU-37)
 
-### ⚙️ Configuração
-- `.gitignore` — credenciais, node, python, editores.
-- `.editorconfig` — formatação consistente entre IDEs.
-- `.env.example` — variáveis documentadas.
+- `<title>` e `<h1>` conforme o plano on-page do pacote.
+- Meta description + keywords do nicho (academia cristã / gospel / espaço kids / 12 semanas).
+- **JSON-LD `ExerciseGym`** com NAP, horário, `sameAs` (Instagram) e amenities (Espaço Kids, gospel, TotalPass).
+- **JSON-LD `FAQPage`** (elegível a rich results).
+- Open Graph + Twitter Card com imagem 1200×630.
+- `canonical`, `robots.txt`, `sitemap.xml`, `site.webmanifest`.
 
----
+## 🚀 Como visualizar / publicar
 
-## 📐 Padrões adotados
+Abra `index.html` no navegador, ou sirva a pasta:
 
-| Padrão | Especificação |
-| --- | --- |
-| Commits | [Conventional Commits 1.0.0](https://www.conventionalcommits.org) |
-| Versionamento | [Semantic Versioning 2.0.0](https://semver.org) |
-| Changelog | [Keep a Changelog 1.1.0](https://keepachangelog.com) |
-| Branches | `main` (produção), `feat/*`, `fix/*`, `hotfix/*` |
-| Arquivos | kebab-case |
-| Segurança | nunca commitar credenciais — usar `.env` e secrets |
+```bash
+cd site && python3 -m http.server 8080   # http://localhost:8080
+```
 
-### Tipos de commit aceitos
+Deploy: qualquer host estático (Netlify, Vercel, Cloudflare Pages, EasyPanel, hospedagem simples).
+Publique o conteúdo de `site/` na raiz do domínio.
 
-`feat` · `fix` · `docs` · `style` · `refactor` · `perf` · `test` · `build` · `ci` · `chore` · `revert`
+## 🔒 Segurança & performance no deploy (headers)
 
----
+O Lighthouse "Best Practices" pede headers HTTP que **só o servidor** entrega (não dá para pôr no HTML). Já vêm prontos:
 
-## 🔐 Segurança
+- **`_headers`** — Netlify e Cloudflare Pages (copiado automaticamente na publicação).
+- **`.htaccess`** — Apache / cPanel / hospedagem tradicional (inclui compressão gzip e cache).
 
-- **Nunca** faça commit de `.env`, chaves, tokens ou credenciais.
-- O scanner **gitleaks** roda automaticamente em todo push/PR.
-- Reporte vulnerabilidades conforme [SECURITY.md](SECURITY.md).
+Ambos configuram: **CSP** (libera Google Fonts + Maps), **HSTS**, **COOP**, **X-Frame-Options**, `X-Content-Type-Options`, `Referrer-Policy` e `Permissions-Policy`, além de **cache** dos assets.
+Observações: o HSTS começa em 180 dias — suba para 1 ano + `preload` após validar o HTTPS. Em Vercel, traduza o `_headers` para `vercel.json` (`headers`).
 
----
+## 🖼️ Performance de imagem
 
-## 🌐 Fluxo Digital Tech
-
-- 🌍 Site — [fluxodigitaltech.com.br](https://fluxodigitaltech.com.br)
-- 📸 Instagram — [@fluxodigital.tech](https://instagram.com/fluxodigital.tech)
-- ✉️ E-mail — [fluxodigitaltech@gmail.com](mailto:fluxodigitaltech@gmail.com)
+O logo é servido via `<picture>`: **WebP** (~15 KB) para navegadores modernos e **PNG** (~31 KB) de fallback, dimensionado para o tamanho real de exibição. Favicon em SVG + PNG (32px e 180px apple-touch).
 
 ---
 
-> Construído para escalar negócios com **automação, IA e estratégia**.
+## ⚠️ ANTES DE IR AO AR — pendências do cliente (PDF: "A CONFIRMAR")
+
+Estes itens vêm marcados como **a confirmar** no pacote estratégico. **Não publique sem resolver:**
+
+1. **Município / CEP exatos.** O site usa `São Paulo/SP` como *placeholder* no schema e “Jardim Santa Bárbara” no texto. O prefixo (11) 4561 sugere ABC/Mauá; há Jd. Santa Bárbara em Guarulhos e na capital. → Corrigir em `index.html` (JSON-LD `addressLocality`, `<title>`, textos) assim que confirmado.
+2. **SSL do domínio `cristaofit.com.br`.** HTTPS quebrado derruba ranqueamento e conversão — pré-requisito de tudo (SEO, pixel, tráfego).
+3. **Google Meu Negócio** ainda como “Academy UP Health” → reivindicar e renomear (preservar avaliações), sem criar ficha nova.
+4. **Preços/planos:** o site **não exibe valores** de propósito (guard-rail do pacote) e direciona para o WhatsApp. Só publique tabela após confirmação do cliente.
+5. **“98% em 315 avaliações”:** **não** foi usado no site (fonte não confirmada). Só cite com fonte validada.
+6. **Modalidades e horários:** listados conforme o dossiê (a confirmar). Ajuste a grade real e os fins de semana.
+7. **Autorização de imagem** de alunos e crianças antes de trocar as ilustrações por fotos reais do Espaço Kids.
+8. **Redirect 301** de `upsaudeacademia.com.br` → páginas equivalentes do novo domínio.
+9. **Coordenadas de geolocalização.** O botão "Traçar rota" e o `hasMap` do schema já funcionam por endereço. Ao confirmar lat/long exatos, adicione no `<head>` `geo.position`/`ICBM` e o bloco `geo` (GeoCoordinates) no JSON-LD — reforça o SEO local no mapa.
+
+## 🔧 Ajustes rápidos (onde mexer)
+
+- **Número/mensagem do WhatsApp:** `assets/js/main.js` → `WA_NUMERO`, `WA_MSG`, `UTM`.
+- **Cidade/endereço/horário:** `index.html` (bloco JSON-LD + seção *Onde estamos* + FAQ).
+- **Domínio de produção:** buscar `cristaofit.com.br` no `index.html`, `robots.txt`, `sitemap.xml`.
+- **Logo:** `assets/img/logo-dark.*` (WebP + PNG). Regenere ambos se trocar a arte.
+- **Coordenadas do mapa:** ver item 9 acima.
+
+## 🌱 Próximos passos sugeridos (SEO de conteúdo — FLU-37)
+
+O pacote lista 10 pautas de blog (academia cristã, corpo é templo, espaço kids, 12 semanas…).
+Criar `/blog` com esses artigos reaproveitando as copies do calendário editorial amplia a
+frente orgânica de cauda longa. Estrutura pronta para receber (é só adicionar URLs ao `sitemap.xml`).
+
+---
+_Feito com propósito · base: Pacote Estratégico Cristão Fit (FLU-33 → FLU-47), Fluxo Digital Tech._

@@ -1,0 +1,18 @@
+# Headers de segurança + cache — formato Netlify / Cloudflare Pages
+# (resolve os apontamentos de "Best Practices" do Lighthouse: CSP, HSTS, COOP, XFO)
+# HSTS: começa em 180 dias; após validar HTTPS, suba para 31536000 e adicione "preload".
+
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src https://www.google.com https://maps.google.com; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=15552000; includeSubDomains
+  Cross-Origin-Opener-Policy: same-origin
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

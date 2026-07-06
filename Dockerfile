@@ -1,6 +1,6 @@
 # Cristão Fit — site estático servido por Nginx
 # Build/deploy: EasyPanel (modo Dockerfile). Contexto = raiz do repo.
-FROM nginx:1.27-alpine
+FROM nginx:1.31-alpine
 
 # Remove a config default e instala a nossa
 RUN rm /etc/nginx/conf.d/default.conf

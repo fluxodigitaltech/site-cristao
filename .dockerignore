@@ -1,0 +1,13 @@
+# Mantém o contexto de build enxuto (só index.html + assets vão pra imagem)
+.git
+.github
+.gitignore
+.editorconfig
+.env
+.env.*
+*.md
+LICENSE
+_headers
+node_modules
+tmp
+*.log

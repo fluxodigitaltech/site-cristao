@@ -8,7 +8,7 @@ COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY docker/security-headers.conf /etc/nginx/snippets/security-headers.conf
 
 # Copia apenas o conteúdo do site (nada de docs/.git)
-COPY index.html /usr/share/nginx/html/index.html
+COPY index.html robots.txt sitemap.xml site.webmanifest /usr/share/nginx/html/
 COPY assets     /usr/share/nginx/html/assets
 
 EXPOSE 80

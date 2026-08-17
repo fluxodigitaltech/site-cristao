@@ -8,14 +8,32 @@
 
   var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- 1. Link de WhatsApp rastreável (mensagem pronta + UTM) ---------- */
+  /* ---- 1. Link de WhatsApp rastreável (mensagem por intenção + UTM) ----
+     Cada botão manda o atendente já sabendo o que a pessoa quer. Antes todos
+     abriam o mesmo texto de "1ª aula grátis", inclusive o botão de Planos: o
+     time recebia dezenas de mensagens iguais e tinha que descobrir na conversa
+     o que a pessoa procurava. Agora o próprio botão diz. */
   var WA_NUMERO = '5511943797718';
-  var WA_MSG = 'Oi! Vi o site da Cristão Fit e quero conhecer. Tem horário disponível para a 1ª aula grátis?';
-  var UTM = 'utm_source=site&utm_medium=cta&utm_campaign=1a-aula';
-  var WA_HREF = 'https://wa.me/' + WA_NUMERO + '?text=' + encodeURIComponent(WA_MSG + '\n\n(' + UTM + ')');
+
+  var WA_MSGS = {
+    aula:        'Oi! Vi o site da Cristão Fit e quero agendar minha 1ª aula grátis. Quais horários vocês têm?',
+    planos:      'Oi! Vi o site da Cristão Fit e quero saber os planos e valores para começar a treinar.',
+    matricula:   'Oi! Quero fazer minha matrícula na Cristão Fit. Pode me passar os planos e as condições?',
+    kids:        'Oi! Vi o site e quero saber como funciona o Espaço Kids enquanto eu treino.',
+    programa:    'Oi! Quero saber como funciona o Programa 12 semanas da Cristão Fit.',
+    modalidades: 'Oi! Quero saber quais modalidades e horários vocês têm na Cristão Fit.',
+    totalpass:   'Oi! Quero saber como funciona o TotalPass na Cristão Fit.'
+  };
+
+  function hrefWa(intencao) {
+    var chave = WA_MSGS[intencao] ? intencao : 'aula';
+    var utm = 'utm_source=site&utm_medium=cta&utm_campaign=vendas&utm_content=' + chave;
+    return 'https://wa.me/' + WA_NUMERO + '?text=' +
+      encodeURIComponent(WA_MSGS[chave] + '\n\n(' + utm + ')');
+  }
 
   document.querySelectorAll('[data-wa]').forEach(function (el) {
-    el.setAttribute('href', WA_HREF);
+    el.setAttribute('href', hrefWa(el.getAttribute('data-wa')));
     el.setAttribute('target', '_blank');
     el.setAttribute('rel', 'noopener');
   });

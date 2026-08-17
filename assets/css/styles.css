@@ -672,3 +672,24 @@ body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotat
   .hero h1 .hl { background: none; -webkit-text-fill-color: var(--verde); color: var(--verde); }
   .btn::after, .card::after { display: none; }
 }
+
+
+/* ===================== BARRA DE VENDA (MOBILE) =====================
+   Só aparece no celular: no desktop o header já fica fixo com o CTA. */
+.sell-bar { display: none; }
+@media (max-width: 860px) {
+  .sell-bar {
+    position: fixed; inset: auto 0 0 0; z-index: 60;
+    display: grid; grid-template-columns: 1fr 1.35fr; gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(15,17,12,.92);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
+  .sell-bar .btn { width: 100%; justify-content: center; padding: 13px 12px; font-size: .92rem; }
+  /* o flutuante do WhatsApp vira redundante: a barra já tem esse caminho,
+     e os dois juntos se sobrepõem e cortam o texto */
+  .wa-float { display: none; }
+  .to-top { bottom: calc(78px + env(safe-area-inset-bottom)); }
+  body { padding-bottom: 68px; }
+}
